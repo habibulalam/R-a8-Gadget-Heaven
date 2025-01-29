@@ -1,167 +1,167 @@
 [
-    {
-      "product_id": 1,
-      "product_title": "XPS 15 Laptop",
-      "product_image": "https://i.ibb.co.com/dmY3S9k/1.webp",
-      "category": "Laptops",
-      "price": 1500,
-      "description": "High-performance laptop with stunning display and powerful graphics.",
-      "Specification": ["16GB RAM", "512GB SSD", "Intel i7 Processor", "4K Display"],
-      "availability": true,
-      "rating": 4.7
-    },
-    {
-      "product_id": 2,
-      "product_title": "Samsung Galaxy S22",
-      "product_image": "https://i.ibb.co.com/rw6523s/2.webp",
-      "category": "Phones",
-      "price": 850,
-      "description": "Powerful Android phone with superior display quality.",
-      "Specification": ["256GB Storage", "5G Connectivity", "Exynos Processor", "AMOLED Display"],
-      "availability": true,
-      "rating": 4.6
-    },
-    {
-      "product_id": 3,
-      "product_title": "MacBook Pro 14",
-      "product_image": "https://i.ibb.co.com/p1CPpy0/3.jpg",
-      "category": "Laptops",
-      "price": 2100,
-      "description": "Premium laptop with Apple M1 chip for optimal performance.",
-      "Specification": ["16GB RAM", "1TB SSD", "Apple M1 Processor", "Retina Display"],
-      "availability": false,
-      "rating": 4.9
-    },
-    {
-      "product_id": 4,
-      "product_title": "Apple Watch Series 8",
-      "product_image": "https://i.ibb.co.com/nLzRV3f/4.jpg",
-      "category": "Watches",
-      "price": 399,
-      "description": "Advanced health-tracking smartwatch from Apple.",
-      "Specification": ["GPS", "Heart Rate Monitor", "Always-On Retina Display", "Water Resistant"],
-      "availability": true,
-      "rating": 4.7
-    },
-    {
-      "product_id": 5,
-      "product_title": "Sony WH-1000XM5",
-      "product_image": "https://i.ibb.co.com/v4RBftY/5.jpg",
-      "category": "Headphones",
-      "price": 350,
-      "description": "Industry-leading noise-canceling headphones from Sony.",
-      "Specification": ["Bluetooth", "Noise Cancellation", "30-hour Battery Life", "Over-Ear Design"],
-      "availability": false,
-      "rating": 4.9
-    },
-    {
-      "product_id": 6,
-      "product_title": "ASUS ROG Zephyrus",
-      "product_image": "https://i.ibb.co.com/KX4tgng/6.webp",
-      "category": "Laptops",
-      "price": 1800,
-      "description": "Gaming laptop with high refresh rate and RGB lighting.",
-      "Specification": ["32GB RAM", "1TB SSD", "AMD Ryzen 9", "144Hz Display"],
-      "availability": true,
-      "rating": 4.8
-    },
-    {
-      "product_id": 7,
-      "product_title": "iPhone 14",
-      "product_image": "https://i.ibb.co.com/CMB7LwF/7.webp",
-      "category": "Phones",
-      "price": 999,
-      "description": "Latest iPhone model with advanced camera features.",
-      "Specification": ["128GB Storage", "5G Connectivity", "A15 Bionic Chip", "OLED Display"],
-      "availability": true,
-      "rating": 4.8
-    },
-    {
-      "product_id": 8,
-      "product_title": "Samsung Galaxy Watch 5",
-      "product_image": "https://i.ibb.co.com/7Q6t8H6/8.webp",
-      "category": "Watches",
-      "price": 350,
-      "description": "Smartwatch with comprehensive fitness tracking features.",
-      "Specification": ["GPS", "ECG Monitoring", "AMOLED Display", "Sleep Tracking"],
-      "availability": false,
-      "rating": 4.6
-    },
-    {
-      "product_id": 9,
-      "product_title": "Bose QuietComfort 45",
-      "product_image": "https://i.ibb.co.com/7kcx3ZH/9.jpg",
-      "category": "Headphones",
-      "price": 329,
-      "description": "Noise-canceling headphones with immersive sound quality.",
-      "Specification": ["Bluetooth", "Noise Cancellation", "20-hour Battery Life", "Over-Ear Design"],
-      "availability": true,
-      "rating": 4.8
-    },
-    {
-      "product_id": 10,
-      "product_title": "Surface Laptop Studio",
-      "product_image": "https://i.ibb.co.com/rxzyw8d/10.jpg",
-      "category": "Laptops",
-      "price": 1600,
-      "description": "Versatile laptop with touchscreen and flexible design.",
-      "Specification": ["16GB RAM", "512GB SSD", "Intel i5 Processor", "Touchscreen Display"],
-      "availability": true,
-      "rating": 4.6
-    },
-    {
-      "product_id": 11,
-      "product_title": "Google Pixel 7",
-      "product_image": "https://i.ibb.co.com/9gTS6z3/11.jpg",
-      "category": "Phones",
-      "price": 799,
-      "description": "Google's flagship phone with excellent camera quality.",
-      "Specification": ["128GB Storage", "5G Connectivity", "Google Tensor Processor", "Full HD+ Display"],
-      "availability": false,
-      "rating": 4.5
-    },
-    {
-      "product_id": 12,
-      "product_title": "Fitbit Versa 4",
-      "product_image": "https://i.ibb.co.com/4m1KCh6/12.jpg",
-      "category": "Watches",
-      "price": 230,
-      "description": "Fitness-focused smartwatch with sleep and health tracking.",
-      "Specification": ["Built-in GPS", "Heart Rate Monitor", "SpO2 Monitoring", "Touchscreen Display"],
-      "availability": true,
-      "rating": 4.4
-    },
-    {
-      "product_id": 13,
-      "product_title": "HP Spectre x360",
-      "product_image": "https://i.ibb.co.com/ZSgY1qs/13.webp",
-      "category": "Laptops",
-      "price": 1400,
-      "description": "Sleek, convertible laptop with powerful performance.",
-      "Specification": ["16GB RAM", "512GB SSD", "Intel i7 Processor", "OLED Display"],
-      "availability": false,
-      "rating": 4.5
-    },
-    {
-      "product_id": 14,
-      "product_title": "AirPods Max",
-      "product_image": "https://i.ibb.co.com/xjkF4Kd/14.png",
-      "category": "Headphones",
-      "price": 549,
-      "description": "Premium headphones with spatial audio and dynamic sound.",
-      "Specification": ["Bluetooth", "Noise Cancellation", "20-hour Battery Life", "Over-Ear Design"],
-      "availability": true,
-      "rating": 4.7
-    },
-    {
-      "product_id": 15,
-      "product_title": "ThinkPad X1 Carbon",
-      "product_image": "https://i.ibb.co.com/kcfZ826/15.jpg",
-      "category": "Laptops",
-      "price": 1700,
-      "description": "Lightweight business laptop with impressive battery life.",
-      "Specification": ["16GB RAM", "1TB SSD", "Intel i7 Processor", "FHD Display"],
-      "availability": true,
-      "rating": 4.7
-    }
-  ]
+  {
+    "product_id": 1,
+    "product_title": "XPS 15 Laptop",
+    "product_image": "https://i.ibb.co.com/dmY3S9k/1.webp",
+    "category": "Laptops",
+    "price": 1500,
+    "description": "High-performance laptop with stunning display and powerful graphics.",
+    "Specification": ["16GB RAM", "512GB SSD", "Intel i7 Processor", "4K Display"],
+    "availability": true,
+    "rating": 3.8
+  },
+  {
+    "product_id": 2,
+    "product_title": "Samsung Galaxy S22",
+    "product_image": "https://i.ibb.co.com/rw6523s/2.webp",
+    "category": "Phones",
+    "price": 850,
+    "description": "Powerful Android phone with superior display quality.",
+    "Specification": ["256GB Storage", "5G Connectivity", "Exynos Processor", "AMOLED Display"],
+    "availability": true,
+    "rating": 2.9
+  },
+  {
+    "product_id": 3,
+    "product_title": "MacBook Pro 14",
+    "product_image": "https://i.ibb.co.com/p1CPpy0/3.jpg",
+    "category": "Laptops",
+    "price": 2100,
+    "description": "Premium laptop with Apple M1 chip for optimal performance.",
+    "Specification": ["16GB RAM", "1TB SSD", "Apple M1 Processor", "Retina Display"],
+    "availability": false,
+    "rating": 4.1
+  },
+  {
+    "product_id": 4,
+    "product_title": "Apple Watch Series 8",
+    "product_image": "https://i.ibb.co.com/nLzRV3f/4.jpg",
+    "category": "Watches",
+    "price": 399,
+    "description": "Advanced health-tracking smartwatch from Apple.",
+    "Specification": ["GPS", "Heart Rate Monitor", "Always-On Retina Display", "Water Resistant"],
+    "availability": true,
+    "rating": 3.5
+  },
+  {
+    "product_id": 5,
+    "product_title": "Sony WH-1000XM5",
+    "product_image": "https://i.ibb.co.com/v4RBftY/5.jpg",
+    "category": "Headphones",
+    "price": 350,
+    "description": "Industry-leading noise-canceling headphones from Sony.",
+    "Specification": ["Bluetooth", "Noise Cancellation", "30-hour Battery Life", "Over-Ear Design"],
+    "availability": false,
+    "rating": 4.9
+  },
+  {
+    "product_id": 6,
+    "product_title": "ASUS ROG Zephyrus",
+    "product_image": "https://i.ibb.co.com/KX4tgng/6.webp",
+    "category": "Laptops",
+    "price": 1800,
+    "description": "Gaming laptop with high refresh rate and RGB lighting.",
+    "Specification": ["32GB RAM", "1TB SSD", "AMD Ryzen 9", "144Hz Display"],
+    "availability": true,
+    "rating": 1.8
+  },
+  {
+    "product_id": 7,
+    "product_title": "iPhone 14",
+    "product_image": "https://i.ibb.co.com/CMB7LwF/7.webp",
+    "category": "Phones",
+    "price": 999,
+    "description": "Latest iPhone model with advanced camera features.",
+    "Specification": ["128GB Storage", "5G Connectivity", "A15 Bionic Chip", "OLED Display"],
+    "availability": true,
+    "rating": 2.5
+  },
+  {
+    "product_id": 8,
+    "product_title": "Samsung Galaxy Watch 5",
+    "product_image": "https://i.ibb.co.com/7Q6t8H6/8.webp",
+    "category": "Watches",
+    "price": 350,
+    "description": "Smartwatch with comprehensive fitness tracking features.",
+    "Specification": ["GPS", "ECG Monitoring", "AMOLED Display", "Sleep Tracking"],
+    "availability": false,
+    "rating": 3.2
+  },
+  {
+    "product_id": 9,
+    "product_title": "Bose QuietComfort 45",
+    "product_image": "https://i.ibb.co.com/7kcx3ZH/9.jpg",
+    "category": "Headphones",
+    "price": 329,
+    "description": "Noise-canceling headphones with immersive sound quality.",
+    "Specification": ["Bluetooth", "Noise Cancellation", "20-hour Battery Life", "Over-Ear Design"],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": 10,
+    "product_title": "Surface Laptop Studio",
+    "product_image": "https://i.ibb.co.com/rxzyw8d/10.jpg",
+    "category": "Laptops",
+    "price": 1600,
+    "description": "Versatile laptop with touchscreen and flexible design.",
+    "Specification": ["16GB RAM", "512GB SSD", "Intel i5 Processor", "Touchscreen Display"],
+    "availability": true,
+    "rating": 2.1
+  },
+  {
+    "product_id": 11,
+    "product_title": "Google Pixel 7",
+    "product_image": "https://i.ibb.co.com/9gTS6z3/11.jpg",
+    "category": "Phones",
+    "price": 799,
+    "description": "Google's flagship phone with excellent camera quality.",
+    "Specification": ["128GB Storage", "5G Connectivity", "Google Tensor Processor", "Full HD+ Display"],
+    "availability": false,
+    "rating": 3.9
+  },
+  {
+    "product_id": 12,
+    "product_title": "Fitbit Versa 4",
+    "product_image": "https://i.ibb.co.com/4m1KCh6/12.jpg",
+    "category": "Watches",
+    "price": 230,
+    "description": "Fitness-focused smartwatch with sleep and health tracking.",
+    "Specification": ["Built-in GPS", "Heart Rate Monitor", "SpO2 Monitoring", "Touchscreen Display"],
+    "availability": true,
+    "rating": 2.8
+  },
+  {
+    "product_id": 13,
+    "product_title": "HP Spectre x360",
+    "product_image": "https://i.ibb.co.com/ZSgY1qs/13.webp",
+    "category": "Laptops",
+    "price": 1400,
+    "description": "Sleek, convertible laptop with powerful performance.",
+    "Specification": ["16GB RAM", "512GB SSD", "Intel i7 Processor", "OLED Display"],
+    "availability": false,
+    "rating": 4.4
+  },
+  {
+    "product_id": 14,
+    "product_title": "AirPods Max",
+    "product_image": "https://i.ibb.co.com/xjkF4Kd/14.png",
+    "category": "Headphones",
+    "price": 549,
+    "description": "Premium headphones with spatial audio and dynamic sound.",
+    "Specification": ["Bluetooth", "Noise Cancellation", "20-hour Battery Life", "Over-Ear Design"],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "product_id": 15,
+    "product_title": "ThinkPad X1 Carbon",
+    "product_image": "https://i.ibb.co.com/kcfZ826/15.jpg",
+    "category": "Laptops",
+    "price": 1700,
+    "description": "Lightweight business laptop with impressive battery life.",
+    "Specification": ["16GB RAM", "1TB SSD", "Intel i7 Processor", "FHD Display"],
+    "availability": true,
+    "rating": 3.0
+  }
+]

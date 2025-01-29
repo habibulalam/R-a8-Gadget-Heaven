@@ -2,10 +2,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+import ReactStars from "react-stars";
+
 
 const ProductDetails = () => {
 
     const [singleProduct, setSingleProduct] = useState({});
+    const [rating, setRating] = useState(0);
 
     const { id } = useParams();
     // console.log(id);
@@ -14,14 +17,28 @@ const ProductDetails = () => {
         fetch(`/fake-data.json`)
             .then((res) => res.json())
             .then((data) => {
-                // console.log(data);
+                console.log(data);
 
                 const filterMatchedProduct = data.find((singleItem) => singleItem.product_id == id);
-                console.log(singleProduct.Specification);
+                // console.log(singleProduct.rating);
                 setSingleProduct(filterMatchedProduct);
+                setRating(filterMatchedProduct.rating);
             });
 
     }, []);
+
+    // Rating stars
+    const ratingStarCodes = {
+        value: rating,
+        size: 24,
+        count: 5,
+        isHalf: true,
+        edit: false,
+        activeColor: "#ffd700",
+        emptyIcon: <i className="far fa-star" />,
+        halfIcon: <i className="fa fa-star-half-alt" />,
+        filledIcon: <i className="fa fa-star" />,
+      };
 
     return (
         <div>
@@ -62,7 +79,7 @@ const ProductDetails = () => {
                             <p className="font-bold text-black mt-1">Specifications</p>
                             <ol className="mt-2">
                                 {
-                                    singleProduct.Specification && singleProduct.Specification.map((spec, index) => ( <li key={index} className="text-slate-500 font-semibold text-sm mb-1 ml-1">{spec}</li>))
+                                    singleProduct.Specification && singleProduct.Specification.map((spec, index) => (<li key={index} className="text-slate-500 font-semibold text-sm mb-1 ml-1">{spec}</li>))
                                 }
                             </ol>
 
@@ -72,13 +89,17 @@ const ProductDetails = () => {
                                 <div className="flex gap-7 items-center mt-1">
                                     {/* <!-- Star Ratings --> */}
                                     <div className="flex">
+                                        {/* <span className="text-yellow-400 text-3xl">★</span>
                                         <span className="text-yellow-400 text-3xl">★</span>
                                         <span className="text-yellow-400 text-3xl">★</span>
                                         <span className="text-yellow-400 text-3xl">★</span>
-                                        <span className="text-yellow-400 text-3xl">★</span>
-                                        <span className="text-gray-400 text-3xl">★</span>
+                                        <span className="text-gray-400 text-3xl">★</span> */}
+                                        {
+                                            <ReactStars {...ratingStarCodes}
+                                            />
+                                        }
                                     </div>
-                                    <span className="px-3 py-1 rounded-3xl bg-green-100 text-black font-bold">4.6</span>
+                                    <span className="px-3 py-1 rounded-3xl bg-green-100 text-black font-bold">{singleProduct.rating}</span>
                                 </div>
                             </div>
 
