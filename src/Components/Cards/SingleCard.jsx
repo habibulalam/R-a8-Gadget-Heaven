@@ -21,7 +21,7 @@ const SingleCard = ({ singleItem }) => {
                 {/* Price and Stock Status */}
                 <div className="flex justify-between items-center">
                     <p className="text-text-clr font-bold text-base">
-                        {singleItem.price}
+                        Price : ${singleItem.price}
                     </p>
                     <span className={`font-semibold text-sm px-4 py-1 border rounded-3xl ${singleItem.availability === true ? 'border-green-500 text-green-500 bg-green-100' : 'border-red-500 text-red-500 bg-red-100'} bg-green-100`}>
                         {singleItem.availability === true ? 'In Stock' : 'Out of Stock'}
