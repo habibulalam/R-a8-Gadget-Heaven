@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const SingleCard = ({ singleItem }) => {
     console.log(singleItem);
@@ -29,9 +30,11 @@ const SingleCard = ({ singleItem }) => {
                 </div>
 
                 {/* View Details Button */}
-                <button className="border-2 border-purple-600 px-5 py-2 mb-5 text-purple-600 hover:bg-purple-600 hover:text-white btn rounded-3xl shadow-purple-500 hover:shadow-2xl duration-500 font-semibold text-lg mt-4">
-                    View Details
-                </button>
+                <Link to={`product-details/${singleItem.product_id}`}>
+                    <button className="border-2 border-purple-600 px-5 py-2 mb-5 text-purple-600 hover:bg-purple-600 hover:text-white btn rounded-3xl shadow-purple-500 hover:shadow-2xl duration-500 font-semibold text-lg mt-4">
+                        View Details
+                    </button>
+                </Link>
             </div>
         </div>
     );

@@ -41,27 +41,27 @@ const GadgetSection = ({ gadgetData }) => {
                     <div className="bg-gray-100 p-2 h-fit rounded-2xl">
                         <ul className="flex flex-col space-y-4 text-sm font-medium text-gray-500 dark:text-gray-400 md:me-4 mb-4 md:mb-0">
                             <li>
-                                <button onClick={() => handleTabClick('allProducts')} className={`inline-flex items-center px-4 py-3 rounded-lg w-full ${activeTab === 'allProducts' ? 'text-white bg-purple-700' : 'bg-white hover:bg-gray-200 hover:text-gray-900'} `}>
+                                <button onClick={() => handleTabClick('allProducts')} className={`font-bold inline-flex items-center px-4 py-3 rounded-lg w-full ${activeTab === 'allProducts' ? 'text-white bg-purple-700' : 'bg-white hover:bg-gray-200 hover:text-gray-900'} `}>
                                     <p><i className="fa-solid fa-box"></i> All Products</p>
                                 </button>
                             </li>
                             <li>
-                                <button onClick={() => handleTabClick('Laptops')} className={`inline-flex items-center px-4 py-3 rounded-lg w-full ${activeTab === 'Laptops' ? 'text-white bg-purple-700' : 'bg-white hover:bg-gray-200 hover:text-gray-900'} `}>
+                                <button onClick={() => handleTabClick('Laptops')} className={`font-bold inline-flex items-center px-4 py-3 rounded-lg w-full ${activeTab === 'Laptops' ? 'text-white bg-purple-700' : 'bg-white hover:bg-gray-200 hover:text-gray-900'} `}>
                                     <p><i className="fa-solid fa-laptop"></i> Laptops</p>
                                 </button>
                             </li>
                             <li>
-                                <button onClick={() => handleTabClick('Headphones')} className={`inline-flex items-center px-4 py-3 rounded-lg w-full ${activeTab === 'Headphones' ? 'text-white bg-purple-700' : 'bg-white hover:bg-gray-200 hover:text-gray-900'} `}>
+                                <button onClick={() => handleTabClick('Headphones')} className={`font-bold inline-flex items-center px-4 py-3 rounded-lg w-full ${activeTab === 'Headphones' ? 'text-white bg-purple-700' : 'bg-white hover:bg-gray-200 hover:text-gray-900'} `}>
                                     <p><i className="fa-solid fa-headphones"></i> Headphones</p>
                                 </button>
                             </li>
                             <li>
-                                <button onClick={() => handleTabClick('Phones')} className={`inline-flex items-center px-4 py-3 rounded-lg w-full ${activeTab === 'Phones' ? 'text-white bg-purple-700' : 'bg-white hover:bg-gray-200 hover:text-gray-900'} `}>
+                                <button onClick={() => handleTabClick('Phones')} className={`font-bold inline-flex items-center px-4 py-3 rounded-lg w-full ${activeTab === 'Phones' ? 'text-white bg-purple-700' : 'bg-white hover:bg-gray-200 hover:text-gray-900'} `}>
                                     <p><i className="fa-solid fa-mobile-screen-button"></i> Mobiles</p>
                                 </button>
                             </li>
                             <li>
-                                <button onClick={() => handleTabClick('Watches')} className={`inline-flex items-center px-4 py-3 rounded-lg w-full ${activeTab === 'Watches' ? 'text-white bg-purple-700' : 'bg-white hover:bg-gray-200 hover:text-gray-900'} `}>
+                                <button onClick={() => handleTabClick('Watches')} className={`font-bold inline-flex items-center px-4 py-3 rounded-lg w-full ${activeTab === 'Watches' ? 'text-white bg-purple-700' : 'bg-white hover:bg-gray-200 hover:text-gray-900'} `}>
                                     <p><i className="fa-solid fa-clock"></i> Watches</p>
                                 </button>
                             </li>
