@@ -4,3 +4,6 @@
   themes: light --default;
 }
 
+*{
+  scroll-behavior: smooth;
+}

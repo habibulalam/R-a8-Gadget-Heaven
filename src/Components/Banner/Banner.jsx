@@ -11,7 +11,7 @@ const Banner = () => {
                             <p className="py-6">
                             Explore the latest gadgets that will take your experience to <br /> the next level. From smart devices to the coolest accessories, we have it all!
                             </p>
-                            <button className="btn bg-white text-purple-600 rounded-4xl">Shop Now</button>
+                            <a href="#product-section" className="btn bg-white text-purple-600 rounded-4xl">Shop Now</a>
                         </div>
                     </div>
 
