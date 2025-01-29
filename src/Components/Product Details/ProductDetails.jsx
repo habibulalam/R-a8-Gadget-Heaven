@@ -1,11 +1,14 @@
 
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 
 import ReactStars from "react-stars";
+import { ProductContext } from "../../App";
 
 
 const ProductDetails = () => {
+
+    const { addToCart, addToWishlist} = useContext(ProductContext);
 
     const [singleProduct, setSingleProduct] = useState({});
     const [rating, setRating] = useState(0);
@@ -38,11 +41,11 @@ const ProductDetails = () => {
         emptyIcon: <i className="far fa-star" />,
         halfIcon: <i className="fa fa-star-half-alt" />,
         filledIcon: <i className="fa fa-star" />,
-      };
+    };
 
     return (
         <div>
-            <section className="relative max-w-[1540px] w-[90%] mx-auto px-[9px] py-2 border mb-[490px]">
+            <section className="relative max-w-[1540px] w-[90%] mx-auto px-[9px] py-2 border mb-[580px] md:mb-[390px]">
                 <div className="flex flex-col justify-center items-center bg-purple-600 text-white">
                     {/* Text continer */}
                     <div className="hero-content text-center mb-40 mt-2">
@@ -57,10 +60,10 @@ const ProductDetails = () => {
 
 
                     {/* Product info container */}
-                    <div className="absolute flex gap-8 -bottom-[360px] max-w-[1000px] w-[90%] border border-gray-300 p-6 rounded-4xl bg-white">
+                    <div className="absolute flex flex-col md:flex-row gap-8 -bottom-[560px] md:-bottom-[360px] max-w-[1000px] w-[90%] border border-gray-300 p-6 rounded-4xl bg-white">
                         {/* <!-- Product Image --> */}
-                        <div className="border border-gray-400 rounded-xl overflow-hidden w-[400px] p-4 bg-gray-200">
-                            <img src={`${singleProduct.product_image}`} className="w-full h-[350px] object-cover rounded-xl" alt={singleProduct.product_title} />
+                        <div className="border border-gray-400 rounded-xl overflow-hidden w-full  md:w-[400px] p-4 bg-gray-200">
+                            <img src={`${singleProduct.product_image}`} className="w-full h-full md:h-[350px] object-cover rounded-xl" alt={singleProduct.product_title} />
                         </div>
 
                         {/* <!-- Product Details --> */}
@@ -72,7 +75,7 @@ const ProductDetails = () => {
                             </span>
 
                             <p className="font-semibold text-base text-gray-600 mt-4">
-                                { }
+                                {singleProduct.description}
                             </p>
 
                             {/* <!-- Specifications --> */}
@@ -106,7 +109,7 @@ const ProductDetails = () => {
                             {/* <!-- Buttons --> */}
                             <div className="flex items-center mt-4">
                                 {/* <!-- Add to Cart Button --> */}
-                                <button className="btn font-bold text-base px-4 py-2 rounded-3xl hover:border-purple-600 text-white hover:text-purple-600 bg-purple-600 hover:bg-white inline-flex items-center">
+                                <button onClick={()=> addToCart(singleProduct)} className="btn font-bold text-base px-4 py-2 rounded-3xl hover:border-purple-600 text-white hover:text-purple-600 bg-purple-600 hover:bg-white inline-flex items-center">
                                     Add to Cart
                                     <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="ml-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="9" cy="21" r="1"></circle>
@@ -123,7 +126,12 @@ const ProductDetails = () => {
                         </div>
                     </div>
                 </div>
+
             </section>
+            {/* Button for shop more */}
+            <div className="text-center my-10">
+                <Link to={"/"} className="btn bg-gray-200 hover:border-purple-600 hover:scale-105 text-black rounded-4xl">Shop More</Link>
+            </div>
         </div>
     );
 };
