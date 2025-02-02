@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 
 const Dashboard = () => {
 
-    const { cartProduct, wishlistProduct, addToCart, addToWishlist, removeFromCart, wishlistToAddCart } = useContext(ProductContext);
+    const { cartProduct, wishlistProduct, removeFromCart, wishlistToAddCart, purchase } = useContext(ProductContext);
 
     // is cart tab active
-    const [isCartActive, setIsCartActive] = useState(false);
+    const [isCartActive, setIsCartActive] = useState(true);
 
     // total price
     const [totalCost, setTotalCost] = useState(0);
@@ -22,8 +22,18 @@ const Dashboard = () => {
         const totalAmount = cartProduct.reduce((acc, item) => acc + item.price, 0);
         // console.log(totalAmount);
         setTotalCost(totalAmount);
-        
+
     }, [cartProduct]);
+
+    // function for sorting the cart products by descending order of price
+    const sortCartByPrice = () => {
+        const sortedCart = [...currentCartProduct].sort((a, b) => b.price - a.price);
+        setCurrentCartProduct(sortedCart);
+    }
+
+    const handlePurchase = () => {
+
+    }
 
     return (
         <div>
@@ -71,14 +81,19 @@ const Dashboard = () => {
                     {/* Text sort and purchase button container */}
                     <div>
                         <div className="flex items-center justify-between py-6 mb-3">
-                            <h3 className="text-2xl font-bold">Cart</h3>
+                            <h3 className="text-4xl font-bold">Cart</h3>
                             <div>
                                 <div>
                                     <span className="text-2xl font-semibold mr-4">Total Cost: ${totalCost}</span>
-                                    <button className="px-4 py-2 border border-purple-600 rounded-3xl text-sm font-semibold hover:scale-105 duration-500 active:scale-90">
+                                    <button
+                                        onClick={sortCartByPrice}
+                                        className="px-4 py-2 border border-purple-600 rounded-3xl text-sm font-semibold hover:scale-105 duration-500 active:scale-90">
                                         <i className="fa-solid fa-arrow-down-wide-short"></i> Sort by Price
                                     </button>
-                                    <button className="px-4 py-2 border border-purple-600 bg-purple-600 rounded-3xl text-sm font-semibold text-white ml-2 hover:scale-105 duration-500 active:scale-90">
+                                    <button
+                                        onClick={() => document.getElementById('my_modal_1').showModal()}
+                                        disabled={currentCartProduct.length === 0 & totalCost === 0}
+                                        className={`btn px-4 py-2 border border-purple-600 bg-purple-600 rounded-3xl text-sm font-semibold text-white ml-2 hover:scale-105 duration-500 active:scale-90 disabled:cursor-not-allowed`}>
                                         Purchase
                                     </button>
                                 </div>
@@ -142,7 +157,7 @@ const Dashboard = () => {
                     {/* Text sort and purchase button container */}
                     <div>
                         <div className="flex items-center justify-between py-6 mb-3">
-                            <h3 className="text-2xl font-bold">Wishlist</h3>
+                            <h3 className="text-4xl font-bold">Wishlist</h3>
                         </div>
                     </div>
 
@@ -201,6 +216,39 @@ const Dashboard = () => {
                         <Link to={"/"} className="btn bg-purple-600 hover:border-purple-600 hover:scale-105 text-white rounded-4xl">Shop Now</Link>
                     </div>
                 </div>
+
+
+                {/* Modal for purchase confirmation */}
+                {/* Open the modal using document.getElementById('ID').showModal() method */}
+                <dialog id="my_modal_1" className="modal">
+                    <div className="modal-box text-center">
+                        {/* Success logo */}
+                        <i className="fa-solid fa-money-check-dollar text-5xl text-green-700 border-2 px-2 py-1 rounded-xl"></i>
+
+                        {/* Title */}
+                        <h2 className="font-bold text-2xl my-4">Payment Successfully Done!</h2>
+
+                        {/* Divider */}
+                        <hr />
+
+                        {/* Message */}
+                        <p className="my-2 text-xl">Thanks for Purchasing 😊</p>
+
+                        {/* Total Price */}
+                        <p className="text-xl">
+                            Total Price: <span className="text-black font-semibold">{totalCost} $</span>
+                        </p>
+
+                        {/* Close Button */}
+                        <form method="dialog">
+                            <button
+                                onClick={purchase}
+                                className="btn mt-4 w-full rounded-3xl bg-gray-200 font-semibold text-lg hover:bg-purple-600 hover:text-white">
+                                Close
+                            </button>
+                        </form>
+                    </div>
+                </dialog>
             </section>
         </div>
     );

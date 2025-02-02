@@ -1,5 +1,5 @@
 
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
 import './App.css'
 import Nav from './Components/Navbar/Nav'
 import Footer from './Components/Footer/Footer'
@@ -12,6 +12,9 @@ import { ToastContainer, toast } from 'react-toastify';
 export const ProductContext = createContext(null);
 
 function App() {
+
+  // Navigate to the home page
+  const navigateToHome = useNavigate();
 
   // cart state
   const [cartProduct, setCartProduct] = useState([]);
@@ -103,6 +106,23 @@ function App() {
 
   };
 
+  // --------------------------------------------------------------- Purchase function ----------------------------------------------------
+  const purchase = () => {
+    setCartProduct([]);
+    setWishlistProduct([]);
+    toast.success('Purchase Successful! 🎉', {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+    navigateToHome('/');
+  };
+
   const contextInfo = {
     cartProduct,
     wishlistProduct,
@@ -110,6 +130,7 @@ function App() {
     addToWishlist,
     removeFromCart,
     wishlistToAddCart,
+    purchase,
   };
 
 
