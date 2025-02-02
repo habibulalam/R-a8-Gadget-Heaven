@@ -119,7 +119,7 @@ const ProductDetails = () => {
                                 </button>
 
                                 {/* <!-- Wishlist Button --> */}
-                                <button title="Add to wishlist" className="btn font-bold text-base px-4 py-2 rounded-full bg-gray-200 hover:bg-purple-600 h-12 w-12 ml-2 hover:text-white">
+                                <button onClick={()=> addToWishlist(singleProduct)} title="Add to wishlist" className="btn font-bold text-base px-4 py-2 rounded-full bg-gray-200 hover:bg-purple-600 h-12 w-12 ml-2 hover:text-white">
                                     <i className="fa-regular fa-heart"></i>
                                 </button>
                             </div>

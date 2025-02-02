@@ -9,19 +9,46 @@ export const ProductContext = createContext(null);
 
 function App() {
 
-  
+  // cart state
   const [cartProduct, setCartProduct] = useState([]);
+  console.log(cartProduct);
+  // wishlist state
   const [wishlistProduct, setWishlistProduct] = useState([]);
 
+  //------------------------------------------------------------------- Add to cart function ----------------------------------------------------
   const addToCart = (product) => {
-    console.log(product.product_id);
+    // console.log(product.product_id);
+    setCartProduct([...cartProduct, product]);
+    alert("Product added to cart");
+    
   };
 
-  const addToWishlist = (product) => {};
+  // --------------------------------------------------------------- Add to wishlist function ----------------------------------------------------
+  const addToWishlist = (product) => {
+    // console.log(product.product_id);
+    const exist = wishlistProduct.find((x) => x.product_id === product.product_id);
+    console.log(exist);
 
-  const removeFromCart = (product) => {};
+    if (exist) {
+      return alert("Product already in wishlist");
+    } else {
+      setWishlistProduct([...wishlistProduct, product]);
+    }
+  };
 
-  const wishlistToAddCart = (product) => {};
+  // --------------------------------------------------------------- Remove from cart function ----------------------------------------------------
+  const removeFromCart = (product) => {
+    setCartProduct(cartProduct.filter((x) => x.product_id !== product.product_id));
+    alert("Product removed from cart");
+  };
+
+  // --------------------------------------------------------------- Wishlist to cart function ----------------------------------------------------
+  const wishlistToAddCart = (product) => {
+    setCartProduct([...cartProduct, product]);
+    const updatedWishlist = wishlistProduct.filter((x) => x.product_id !== product.product_id);
+    setWishlistProduct(updatedWishlist);
+
+  };
 
   const contextInfo = {
     cartProduct,
