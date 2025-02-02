@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { ProductContext } from "../../App";
+import { Link } from "react-router-dom";
 
 
 const Dashboard = () => {
@@ -63,7 +64,12 @@ const Dashboard = () => {
                     {/* Cart item container */}
                     <div className="bg-gray-200 p-3 rounded-2xl">
                         {/* Cart */}
-                        {
+                        {currentCartProduct.length === 0 ? <div className="flex flex-col items-center justify-center h-[300px]">
+                            <h1 className="text-2xl font-semibold text-center mb-5">Cart is empty</h1>
+                            <div className="text-center">
+                                <Link to={"/"} className="btn bg-purple-600 hover:border-purple-600 hover:scale-105 text-white rounded-4xl">Shop Now</Link>
+                            </div>
+                        </div> :
                             currentCartProduct.map((product, index) => (
                                 <div key={index} className="border rounded-xl p-5 bg-white mb-5 relative">
                                     {/* Info container */}
