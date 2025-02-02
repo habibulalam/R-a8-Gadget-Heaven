@@ -6,7 +6,7 @@ import { use } from "react";
 
 const Dashboard = () => {
 
-    const { cartProduct, wishlistProduct, removeFromCart, wishlistToAddCart, purchase, toggleCartWishlist } = useContext(ProductContext);
+    const { cartProduct, wishlistProduct, removeFromCart,removeFromWishlist, wishlistToAddCart, purchase, toggleCartWishlist } = useContext(ProductContext);
 
     // is cart tab active
     const [isCartActive, setIsCartActive] = useState(true);
@@ -22,6 +22,12 @@ const Dashboard = () => {
 
     const [currentCartProduct, setCurrentCartProduct] = useState(cartProduct);
     console.log(currentCartProduct);
+
+    const [currentWishlistProduct, setCurrentWishlistProduct] = useState(wishlistProduct);
+
+    useEffect(() => {
+        setCurrentWishlistProduct(wishlistProduct);
+    }, [wishlistProduct]);
 
     useEffect(() => {
         setCurrentCartProduct(cartProduct);
@@ -138,7 +144,7 @@ const Dashboard = () => {
                                             </div>
                                         </div>
 
-                                        {/* Right side content */}
+                                        {/* Right side content (cart)*/}
                                         <div className="flex items-center gap-3">
                                             <button
                                                 onClick={() => removeFromCart(product)}
@@ -170,10 +176,10 @@ const Dashboard = () => {
                     {/* Wishlist item container */}
                     <div className="bg-gray-200 p-3 rounded-2xl mb-3">
                         {/* Cart */}
-                        {wishlistProduct.length === 0 ? <div className="flex flex-col items-center justify-center h-[100px]">
+                        {currentWishlistProduct.length === 0 ? <div className="flex flex-col items-center justify-center h-[100px]">
                             <h1 className="text-2xl font-semibold text-center">Wishlist is empty</h1>
                         </div> :
-                            wishlistProduct.map((product, index) => (
+                            currentWishlistProduct.map((product, index) => (
                                 <div key={index} className="border rounded-xl p-5 bg-white mb-5 relative">
                                     {/* Info container */}
                                     <div className="flex justify-between">
@@ -204,10 +210,10 @@ const Dashboard = () => {
                                             </div>
                                         </div>
 
-                                        {/* Right side content */}
+                                        {/* Right side content (wishlist)*/}
                                         <div className="flex items-center gap-3">
                                             <button
-                                                onClick={() => removeFromCart(product)}
+                                                onClick={() => removeFromWishlist(product)}
                                                 className="btn text-red-600 border border-red-600 rounded-full px-2 py-1 bg-red-100 hover:scale-105 duration-700">
                                                 Remove
                                             </button>

@@ -27,11 +27,26 @@ function App() {
 
   //------------------------------------------------------------------- Add to cart function ----------------------------------------------------
   const addToCart = (product) => {
+
+    // Check if the product is available
+    if (product.availability === false) {
+      return toast.error('Unfortunately, this product is currently out of stock', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+
     // console.log(product.product_id);
     setCartProduct([...cartProduct, product]);
     // alert("Product added to cart");
     toast.success('Product added to Cart 🛒', {
-      position: "top-right",
+      position: "top-center",
       autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
@@ -45,6 +60,18 @@ function App() {
 
   // --------------------------------------------------------------- Add to wishlist function ----------------------------------------------------
   const addToWishlist = (product) => {
+    if (product.availability === false) {
+      return toast.error('Unfortunately, this product is currently out of stock', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
     // console.log(product.product_id);
     const exist = wishlistProduct.find((x) => x.product_id === product.product_id);
     // console.log(exist);
@@ -52,7 +79,7 @@ function App() {
     if (exist) {
       // return alert("Product already in wishlist");
       return toast.error('Product already in Wishlist ', {
-        position: "top-right",
+        position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
@@ -64,7 +91,7 @@ function App() {
     } else {
       setWishlistProduct([...wishlistProduct, product]);
       toast.success('Product added to Wishlist 💖', {
-        position: "top-right",
+        position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
@@ -80,7 +107,7 @@ function App() {
   const removeFromCart = (product) => {
     setCartProduct(cartProduct.filter((x) => x.product_id !== product.product_id));
     toast.error('Product removed from Cart ', {
-      position: "top-right",
+      position: "top-center",
       autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
@@ -91,13 +118,28 @@ function App() {
       });
   };
 
+  // --------------------------------------------------------------- Remove from wishlist function ----------------------------------------------------
+  const removeFromWishlist = (product) => {
+    setWishlistProduct(wishlistProduct.filter((x) => x.product_id !== product.product_id));
+    toast.error('Product removed from Wishlist ', {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  };
+
   // --------------------------------------------------------------- Wishlist to cart function ----------------------------------------------------
   const wishlistToAddCart = (product) => {
     setCartProduct([...cartProduct, product]);
     const updatedWishlist = wishlistProduct.filter((x) => x.product_id !== product.product_id);
     setWishlistProduct(updatedWishlist);
     toast.success('Added to Cart from Wishlist! 🛒', {
-      position: "top-right",
+      position: "top-center",
       autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
@@ -138,6 +180,7 @@ function App() {
     addToCart,
     addToWishlist,
     removeFromCart,
+    removeFromWishlist,
     wishlistToAddCart,
     purchase,
     handleToggleCartWishlist,
