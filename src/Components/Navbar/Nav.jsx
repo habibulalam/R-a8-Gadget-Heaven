@@ -1,4 +1,6 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { useContext } from "react";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { ProductContext } from "../../App";
 
 
 const Nav = () => {
@@ -6,6 +8,17 @@ const Nav = () => {
     const currentLocation = useLocation();
     const { pathname } = currentLocation;
     // console.log(pathname);
+
+    // Context API
+    const { cartProduct, wishlistProduct, handleToggleCartWishlist } = useContext(ProductContext);
+
+    // Navigate to the dashboard
+    const navigateToDashboard = useNavigate();
+
+    const handleNavigate = (boleanValueFromNav) => {
+        handleToggleCartWishlist(boleanValueFromNav);
+        navigateToDashboard('/dashboard');
+    }
 
     return (
         <section className={`max-w-[1540px] w-[90%] mx-auto mt-4 border-b-0 ${pathname === '/' ? "border" : ""} px-2 pt-2 rounded-t-4xl`}>
@@ -52,14 +65,16 @@ const Nav = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <button className="btn btn-ghost btn-circle">
-                    <i className="fa-solid fa-cart-shopping"></i>
-                    </button>
-                    <button className="btn btn-ghost btn-circle">
-                        <div className="indicator">
-                        <i className="fa-regular fa-heart"></i>
-                        </div>
-                    </button>
+                    <div className="flex gap-2">
+                        <button onClick={()=> handleNavigate(true)} className="btn btn-ghost btn-circle relative">
+                            <i className="fa-solid fa-cart-shopping relative"></i>
+                            <span className="absolute top-0 right-0 badge badge-xs rounded-full badge-error text-white px-1 py-1">{cartProduct ? cartProduct.length : 0}</span>
+                        </button>
+                        <button onClick={()=> handleNavigate(false)} className="btn btn-ghost btn-circle relative">
+                            <i className="fa-regular fa-heart"></i>
+                            <span className="absolute top-0 right-0 badge badge-xs rounded-full badge-error text-white px-1 py-1">{wishlistProduct ? wishlistProduct.length : 0}</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>

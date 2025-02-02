@@ -22,6 +22,9 @@ function App() {
   // wishlist state
   const [wishlistProduct, setWishlistProduct] = useState([]);
 
+  // Toggle cart and wishlist tab
+  const [toggleCartWishlist, setToggleCartWishlist] = useState(true);
+
   //------------------------------------------------------------------- Add to cart function ----------------------------------------------------
   const addToCart = (product) => {
     // console.log(product.product_id);
@@ -123,7 +126,13 @@ function App() {
     navigateToHome('/');
   };
 
+  // --------------------------------------------------------------- Function for toggle Cart and Wishlist tab ----------------------------------------------------
+  const handleToggleCartWishlist = (boleanValue) => {
+    setToggleCartWishlist(boleanValue);
+  };
+
   const contextInfo = {
+    toggleCartWishlist,
     cartProduct,
     wishlistProduct,
     addToCart,
@@ -131,6 +140,7 @@ function App() {
     removeFromCart,
     wishlistToAddCart,
     purchase,
+    handleToggleCartWishlist,
   };
 
 

@@ -1,14 +1,20 @@
 import { useContext, useEffect, useState } from "react";
 import { ProductContext } from "../../App";
 import { Link } from "react-router-dom";
+import { use } from "react";
 
 
 const Dashboard = () => {
 
-    const { cartProduct, wishlistProduct, removeFromCart, wishlistToAddCart, purchase } = useContext(ProductContext);
+    const { cartProduct, wishlistProduct, removeFromCart, wishlistToAddCart, purchase, toggleCartWishlist } = useContext(ProductContext);
 
     // is cart tab active
     const [isCartActive, setIsCartActive] = useState(true);
+    console.log(toggleCartWishlist);
+
+    useEffect(() => {
+        setIsCartActive(toggleCartWishlist);
+    }, [toggleCartWishlist]);
 
     // total price
     const [totalCost, setTotalCost] = useState(0);
