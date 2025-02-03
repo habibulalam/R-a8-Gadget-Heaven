@@ -1,6 +1,10 @@
+import { useEffect } from "react";
 import { toast } from "react-toastify";
 
 const ContactUs = () => {
+    useEffect(() => {
+        document.title = "Contact Us | Gadget Heaven";
+    }, []);
 
     const handleSubmit = (e) => {
         e.preventDefault();

@@ -21,7 +21,7 @@ const Nav = () => {
     }
 
     return (
-        <section className={`max-w-[1540px] w-[90%] mx-auto mt-4 border-b-0 ${pathname === '/' ? "border" : ""} px-2 pt-2 rounded-t-4xl`}>
+        <section className={`max-w-[1540px] w-[90%] mx-auto mt-4 border-b-0 ${pathname === '/' ? "border" : ""} px-2 pt-2 rounded-t-4xl sticky -top-2 z-50`}>
             <div className={`navbar bg-base-100  border-b-0 rounded-t-4xl ${pathname === '/' ? 'bg-purple-600 text-white border' : 'bg-base-100'}`}>
                 <div className="navbar-start">
                     <div className="dropdown">

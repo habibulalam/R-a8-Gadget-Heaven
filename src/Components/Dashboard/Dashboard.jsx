@@ -6,7 +6,20 @@ import { use } from "react";
 
 const Dashboard = () => {
 
-    const { cartProduct, wishlistProduct, removeFromCart,removeFromWishlist, wishlistToAddCart, purchase, toggleCartWishlist } = useContext(ProductContext);
+    useEffect(() => {
+        document.title = "Product Dashboard | Gadget Heaven";
+    }, []);
+
+    const context = useContext(ProductContext);
+
+    useEffect(() => {
+        // ✅ Check if context is null before using it
+        if (!context) {
+            return {}; // Or return an empty object `{}` instead
+        }
+    }, []);
+
+    const { cartProduct, wishlistProduct, removeFromCart, removeFromWishlist, wishlistToAddCart, purchase, toggleCartWishlist } = context;
 
     // is cart tab active
     const [isCartActive, setIsCartActive] = useState(true);
@@ -92,7 +105,7 @@ const Dashboard = () => {
                 <div className={`${isCartActive ? "block" : "hidden"}`}>
                     {/* Text sort and purchase button container */}
                     <div>
-                        <div className="flex items-center justify-between py-6 mb-3">
+                        <div className="flex flex-col md:flex-row gap-2 items-center justify-between py-6 mb-3">
                             <h3 className="text-4xl font-bold">Cart</h3>
                             <div>
                                 <div>
@@ -104,7 +117,7 @@ const Dashboard = () => {
                                     </button>
                                     <button
                                         onClick={() => document.getElementById('my_modal_1').showModal()}
-                                        disabled={currentCartProduct.length === 0 & totalCost === 0}
+                                        disabled={currentCartProduct?.length === 0 & totalCost === 0}
                                         className={`btn px-4 py-2 border border-purple-600 bg-purple-600 rounded-3xl text-sm font-semibold text-white ml-2 hover:scale-105 duration-500 active:scale-90 disabled:cursor-not-allowed`}>
                                         Purchase
                                     </button>
